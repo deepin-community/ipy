@@ -1,0 +1,2 @@
+Tests: check_py3
+Depends: @, python3-all

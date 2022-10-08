@@ -1,0 +1,3 @@
+version=3
+
+https://github.com/haypo/python-ipy/releases .*/IPy-(.*)\.tar\.gz

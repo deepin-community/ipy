@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+unit_test=$(realpath $(dirname "${0}")/../../test/test_IPy.py)
+
+for py in $(py3versions -r 2>/dev/null); do
+	cd "$AUTOPKGTEST_TMP"
+	echo "Testing with $py:"
+	"${py}" "${unit_test}" 2>&1
+done
+

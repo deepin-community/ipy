@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+PYTHON3S:=$(shell py3versions -vr)
+
+%:
+	dh $@ --with python3
+
+override_dh_auto_build:
+	set -e && for pyvers in $(PYTHON3S); do \
+		python$$pyvers setup.py build; \
+	done
+
+override_dh_auto_install:
+	set -e && for pyvers in $(PYTHON3S); do \
+		python$$pyvers setup.py install --install-layout=deb \
+			--root $(CURDIR)/debian/python3-ipy; \
+	done
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf $(CURDIR)/build
+IPy.html:
+	rst2html README.rst IPy.html
+
+binary: binary-indep
+binary-arch:
+	# nothing to do here.
+binary-indep: $(PYTHON3S:%=test/test-%-stamp) IPy.html
+	dh $@ --with python3
+
+test/test-%-stamp:
+ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
+	python$* test/test_IPy.py
+	touch $@
+endif
+
+
+.PHONY: install get-orig-source binary binary-arch binary-indep
