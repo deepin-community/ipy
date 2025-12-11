@@ -3,9 +3,11 @@ Section: python
 Priority: optional
 Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders: Bernd Zeimetz <bzed@debian.org>
-Build-Depends: debhelper-compat (= 12),
-               dh-python,
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-python3,
+               pybuild-plugin-pyproject,
                python3-all,
+               python3-setuptools,
 Build-Depends-Indep: python3-docutils
 Standards-Version: 3.9.6
 Homepage: https://github.com/haypo/python-ipy/

@@ -1,1 +1,4 @@
-.pc/
+*.pyc
+*.swp
+.coverage
+htmlcov
