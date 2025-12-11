@@ -1,29 +1,61 @@
-ipy (1:1.01-1) UNRELEASED; urgency=medium
+ipy (1:1.01-5) unstable; urgency=medium
 
-  * update
+  * Team upload.
+  * Convert packaging to pybuild (closes: #1103313).
 
- -- Debian Python Team <team+python@tracker.debian.org>  Thu, 19 May 2022 10:10:38 +0800
+ -- Colin Watson <cjwatson@debian.org>  Sun, 13 Jul 2025 11:21:48 +0200
+
+ipy (1:1.01-4) unstable; urgency=medium
+
+  * Team upload.
+  * Add build-dependency on python3-setuptools needed for distutils
+    compatibility mode (Closes: #1080616)
+
+ -- Alexandre Detiste <tchet@debian.org>  Thu, 30 Jan 2025 00:48:03 +0100
+
+ipy (1:1.01-3) UNRELEASED; urgency=medium
+
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository-Browse.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Wed, 11 Jan 2023 14:48:45 -0000
+
+ipy (1:1.01-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Wrap long lines in changelog entries: 1:1.01-1.
+  * Bump debhelper from old 12 to 13.
+  * Set upstream metadata fields: Contact, Name.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Mon, 17 Oct 2022 04:35:54 +0100
 
 ipy (1:1.01-1) unstable; urgency=medium
 
   [ Debian Janitor ]
   * [791f967] Bump debhelper from old 9 to 12.
     Fixes: lintian: package-uses-old-debhelper-compat-version
-    See-also: https://lintian.debian.org/tags/package-uses-old-debhelper-compat-version.html
-  * [d07575c] Set upstream metadata fields: Bug-Database, Bug-Submit, Repository, Repository-Browse.
-    Fixes: lintian: upstream-metadata-file-is-missing
-    See-also: https://lintian.debian.org/tags/upstream-metadata-file-is-missing.html
+    See-also:
+    https://lintian.debian.org/tags/package-uses-old-debhelper-compat-version.html
+  * [d07575c] Set upstream metadata fields: Bug-Database, Bug-Submit,
+    Repository, Repository-Browse. Fixes: lintian:
+    upstream-metadata-file-is-missing
+    See-also:
+    https://lintian.debian.org/tags/upstream-metadata-file-is-missing.html
     Fixes: lintian: upstream-metadata-missing-bug-tracking
-    See-also: https://lintian.debian.org/tags/upstream-metadata-missing-bug-tracking.html
+    See-also:
+    https://lintian.debian.org/tags/upstream-metadata-missing-bug-tracking.html
     Fixes: lintian: upstream-metadata-missing-repository
-    See-also: https://lintian.debian.org/tags/upstream-metadata-missing-repository.html
+    See-also:
+    https://lintian.debian.org/tags/upstream-metadata-missing-repository.html
   * [f57261a] Remove unnecessary get-orig-source-target.
     Fixes: lintian: debian-rules-contains-unnecessary-get-orig-source-target
-    See-also: https://lintian.debian.org/tags/debian-rules-contains-unnecessary-get-orig-source-target.html
+    See-also:
+    https://lintian.debian.org/tags/debian-rules-contains-unnecessary-get-orig-source-target.html
 
   [ Ondřej Nový ]
-  * [9ccf0f6] d/control: Update Maintainer field with new Debian Python Team contact address
-  * [3a42a61] d/control: Update Vcs-* fields with new Debian Python Team Salsa layout
+  * [9ccf0f6] d/control: Update Maintainer field with new Debian Python Team
+    contact address
+  * [3a42a61] d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout
 
   [ Bernd Zeimetz ]
   * [b8906bd] New upstream version 1.01
